@@ -2,7 +2,7 @@
 
 ## Set up syzkaller
 
-- For basic set up on syzkaller, see [this article](https://github.com/google/syzkaller/blob/master/docs/linux/setup_ubuntu-host_qemu-vm_x86-64-kernel.md)
+- For basic set up on syzkaller, see [this article](https://github.com/google/syzkaller/blob/master/docs/linux/setup_ubuntu-host_qemu-vm_x86-64-kernel.md).
 
 - But, There is a different settings to be needed.
   - Install go 1.9.5 (above article recommends you to install go 1.8.1, do not follow that guide)
@@ -54,4 +54,4 @@ rm -rf *
 
 ## Details
 
-- To get to know how this example works, See this blog.
+- To get to know how this example works, See [this blog](https://jinb-park.blogspot.com/2019/02/how-syzkaller-works-03-fuzzing-driver.html).
