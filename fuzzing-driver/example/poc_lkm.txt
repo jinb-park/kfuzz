@@ -1,0 +1,26 @@
+include <linux/kernel.h>
+include <linux/init.h>
+include <linux/module.h>
+include <linux/slab.h>
+include <linux/mm.h>
+include <linux/proc_fs.h>
+include <linux/uaccess.h>
+include <asm/uaccess.h>
+
+# resource
+resource fd_poc_lkm[fd]
+
+# operations
+syz_open_dev$poc_lkm(dev ptr[in, string["/proc/poc_lkm"]], flags flags[open_flags], mode flags[open_mode]) fd_poc_lkm
+
+ioctl$poc_lkm(fd fd_poc_lkm, cmd flags[poc_lkm_cmds], arg ptr[in, poc_lkm_object])
+close$poc_lkm(fd fd_poc_lkm)
+
+poc_lkm_object {
+	Data0	int8
+	Data1	int8
+	Data2	const[0, int64]
+	Data3	const[0, int64]
+}
+
+poc_lkm_cmds = 0xc0185000, 0xc0185001
